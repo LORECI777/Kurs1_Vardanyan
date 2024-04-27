@@ -3,7 +3,7 @@ import calendar
 import datetime
 
 
-#
+# Назад
 def back():
     global month, year
     month -= 1
@@ -13,7 +13,7 @@ def back():
     data()
 
 
-#
+# Вперед
 def next():
     global month, year
     month += 1
