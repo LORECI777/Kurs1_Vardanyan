@@ -81,7 +81,6 @@ next_butt.place(relx=0.9225, rely=0.0525, relheight=0.07, relwidth=0.05)
 lbl0 = tk.Label(window, text='Календарь', width=1, height=1, bg="Black", fg='White', font=(1, 17))
 lbl0.place(relx=0.33, rely=0.05, relheight=0.05, relwidth=0.3)
 
-
 # Дни недели
 for i in range(7):
     lbl_nedel = tk.Label(window, text=calendar.day_abbr[i], height=1, width=1, font=(1, 10), bg="Black", fg='White')
