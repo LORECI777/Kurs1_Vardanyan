@@ -128,13 +128,39 @@ def programms_day():
         print("Введите корректный год в виде числа, например 2022")
         return
 
-    # Определение нужной даты
+    # Определение нужной даты дня программиста
     programmer_day = datetime.date(year, 1, 1) + datetime.timedelta(255)
 
+    # Определение дня недели для программистского дня
+    day_of_week = calendar.day_name[programmer_day.weekday()]
+    # Отобразить календарь для этой даты
+    year = year_str
+    month = programmer_day.month
+
+    if day_of_week == 'Monday':
+        day_of_week_translate = 'Понедельник'
+    elif day_of_week == 'Tuesday':
+        day_of_week_translate = 'Вторник'
+    elif day_of_week == 'Wednesday':
+        day_of_week_translate = 'Среда'
+    elif day_of_week == 'Thursday':
+        day_of_week_translate = 'Четверг'
+    elif day_of_week == 'Friday':
+        day_of_week_translate = 'Пятница'
+    elif day_of_week == 'Saturday':
+        day_of_week_translate = 'Суббота'
+    else:
+        day_of_week_translate = 'Воскресенье'
+
     print("День программиста в", year, "году будет", programmer_day.strftime('%d.%m.%Y'))
+    print(f"День недели: {day_of_week} ({day_of_week_translate})")
     lbl_program_day7 = tk.Label(window, text=f'День программиста в {year} году будет {programmer_day.strftime("%d.%m.%Y")}',
                                 fg='White', bg='Black', font=(1, 13))
-    lbl_program_day7.place(relx=0.01, rely=0.9, relheight=0.06, relwidth=0.5)
+    lbl_program_day7.place(relx=0.01, rely=0.89, relheight=0.05, relwidth=0.5)
+    lbl_program_day77 = tk.Label(window,
+                                text=f"День недели: {day_of_week} ({day_of_week_translate})",
+                                fg='White', bg='Black', font=(1, 13))
+    lbl_program_day77.place(relx=0.01, rely=0.93, relheight=0.05, relwidth=0.5)
 
     data()
 
@@ -149,7 +175,7 @@ butt_program_day.place(relx=0.7278, rely=0.853, relheight=0.05, relwidth=0.2)
 lbl_program_day2 = tk.Label(window,
                            text='Введите год, чтобы узнать день программиста (256 день от начала календарного года): ',
                            bg='Black', fg='White', font=(1, 13))
-lbl_program_day2.place(relx=0.01, rely=0.848, relheight=0.06, relwidth=0.6)
+lbl_program_day2.place(relx=0.01, rely=0.847, relheight=0.06, relwidth=0.6)
 lbl_entr_day = tk.Entry(window, bg='DarkGrey', font=(1, 14))
 lbl_entr_day.place(relx=0.62, rely=0.848, relheight=0.05, relwidth=0.08)
 
